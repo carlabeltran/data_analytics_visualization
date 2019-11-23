@@ -3,6 +3,8 @@
 * Keyboard shortcuts
   * Select multiple cells in continous range.
     * Ctrl + Shift + Arrow key
+  * Select all the data you have
+    * Ctrl + a
 
 * <https://www.reddit.com/r/educationalgifs/comments/dty4vu/60_seconds_to_learn_how_to_excel_at_using_excel/>
 
