@@ -1,5 +1,7 @@
 # Excel Cheat Sheet
 
+* Data types in Excel
+  * <https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/data-types/integer-data-type>
 * Keyboard shortcuts
   * Select multiple cells in continous range.
     * Ctrl + Shift + Arrow key

@@ -10,6 +10,16 @@ Sub HelloWorld():
 End Sub
 ```
 
+## 02-Stu_HelloVBA
+
+```bash
+Sub ShowMessages():
+    MsgBox ("This is message 1.")
+    MsgBox ("This is message 2.")
+    MsgBox ("This is message 3.")
+End Sub
+```
+
 ## 03-Ins_ButtonClicks
 
 ```bash
@@ -21,6 +31,18 @@ End Sub
 ' Subroutine for Button 2
 Sub Button2_Click()
     MsgBox ("You clicked Button 2!")
+End Sub
+```
+
+##  04-Stu_ChooseYourButton
+
+```bash
+Sub Button1_Click():
+    MsgBox ("You chose button 1. You lose.")
+End Sub
+
+Sub Button2_Click():
+    MsgBox ("You chose button 2. You win.")
 End Sub
 ```
 
@@ -43,6 +65,71 @@ Sub CellsAndRanges():
   ' Inserting Data Across Ranges
   Range("F5:F7") = 5
 
+End Sub
+```
+
+## 06-Stu_ChessBoard 
+
+```bash
+Sub PopulateTopChessBoard():
+    Range("A2: H2") = "Pawn"
+    Range("A1: H1") = "Rook"
+    Range("B1: G1") = "Knight"
+    Range("C1: F1") = "Bishop"
+    Range("D1") = "Queen"
+    Range("E1") = "King"
+End Sub
+
+Sub PopulateBottomChessBoard():
+    Cells(7, 1) = "Pawn"
+    Cells(7, 2) = "Pawn"
+    Cells(7, 3) = "Pawn"
+    Cells(7, 4) = "Pawn"
+    Cells(7, 5) = "Pawn"
+    Cells(7, 6) = "Pawn"
+    Cells(7, 7) = "Pawn"
+    Cells(7, 8) = "Pawn"
+    
+    Cells(8, 1) = "Rook"
+    Cells(8, 8) = "Rook"
+    
+    Cells(8, 2) = "Knight"
+    Cells(8, 7) = "Knight"
+    
+    Cells(8, 3) = "Bishop"
+    Cells(8, 6) = "Bishop"
+    
+    Cells(8, 4) = "King"
+    
+    Cells(8, 5) = "Queen"
+
+        ' Setting cell color formatting
+  ' ---------------------------------------
+  For i = 1 To 8
+    For j = 1 To 8
+        If i Mod 2 = 0 Then
+            If j Mod 2 <> 0 Then
+                Cells(i, j).Interior.ColorIndex = 1
+            End If
+        Else
+            If j Mod 2 = 0 Then
+            Cells(i, j).Interior.ColorIndex = 1
+            End If
+        End If
+    Next j
+  Next i
+  
+  ' Setting text color
+  ' ---------------------------------------
+  Range("a1:h2").Font.ColorIndex = 3
+  Range("a1:h2").Font.Bold = True
+  
+  Range("a7:h8").Font.ColorIndex = 5
+  Range("a7:h8").Font.Bold = True
+  
+  ' Setting cell height and width
+  Range("a1:h8").RowHeight = 60
+  Range("a1:h8").ColumnWidth = 20
 End Sub
 ```
 
