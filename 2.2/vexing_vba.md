@@ -272,6 +272,8 @@ Sub ClassScanner()
 End Sub
 ```
 
+## 08-Stu_HornetsNest
+
 ```bash
 Sub BugHunt()
     Dim number_hornets As Integer
