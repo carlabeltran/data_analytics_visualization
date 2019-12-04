@@ -1,5 +1,7 @@
 # Vexing VBA
 
+## 01-Stu_Warmup - Budget Checker
+
 ```bash
 Sub CalculateTotal():
     Dim Budget As Double
@@ -27,6 +29,34 @@ End Sub
 ```
 
 ```bash
+Sub CalculateTotal()
+    Dim budget As Double
+    Dim price As Double
+    Dim fees As Double
+    Dim total As Double
+    Dim new_price As Double
+    
+    budget = Range("C3").Value
+    price = Range("F3").Value
+    fees = Range("H3").Value
+    
+    total = price * (1 + fees)
+    Range("L3").Value = Round(total, 0)
+    
+    If Round(total, 0) > Round(budget, 0) Then
+        MsgBox ("You are over budget by $ " + Str(Round((total - budget), 0)))
+        new_price = budget / (1 + fees)
+        Range("F3").Value = WorksheetFunction.RoundDown(new_price, 2)
+        Range("L3").Value = budget
+    ElseIf Round(budget, 0) > Round(total, 0) Then
+        MsgBox ("You are under budget by $ " + Str(Round((budget - total), 0)))
+    End If
+End Sub
+```
+
+## 02-Ins_ForLoops
+
+```bash
 Sub forLoop()
 
     Dim i As Integer
@@ -51,6 +81,23 @@ End Sub
 ```bash
 Sub forLoop()
 
+Dim i As Integer
+    For i = 1 To 20
+        ' Places a value of 1 in A1 to A20
+        Cells(i, 1).Value = 1
+        ' Places a value of 5 in A1 to T1
+        Cells(1, i).Value = 5
+        ' Places increasing values based upon the variable "i" in B2 to B21
+        Cells(i + 1, 2).Value = i + 1
+    Next i
+End Sub
+```
+
+## 03-Stu_ChickenNuggets
+
+```bash
+Sub forLoop()
+
     Dim i As Integer
     Dim food As String
     Dim sentence As String
@@ -68,6 +115,8 @@ Sub forLoop()
     
 End Sub
 ```
+
+## 04-Ins_LoopConditionals
 
 ```bash
 Sub modulo()
@@ -116,6 +165,8 @@ Sub conditional_loops()
 End Sub
 ```
 
+## 05-Stu_FizzBuzz
+
 ```bash
 Sub FizzBuzz()
     Dim number As Integer
@@ -135,6 +186,8 @@ Sub FizzBuzz()
     Next i
 End Sub
 ```
+
+## 06-Stu_Lotto
 
 ```bash
 Sub FindLottoWinners()
@@ -193,6 +246,8 @@ Sub FindLottoWinners()
         
 End Sub
 ```
+
+## 07-Ins_NestedForLoops
 
 ```bash
 ' Nested For Loop
