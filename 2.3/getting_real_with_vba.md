@@ -287,6 +287,68 @@ Sub CalculateTotal()
 End Sub
 ```
 
+## 07-Stu_WellsFargo_Pt1
+
+* <https://stackoverflow.com/questions/19323343/get-a-worksheet-name-using-excel-vba/19323571>
+* <https://www.thespreadsheetguru.com/the-code-vault/2014/5/7/insert-single-or-multiple-excel-columns-with-vba>
+* <https://stackoverflow.com/questions/11926972/excel-vba-finding-the-last-column-with-data>
+* <https://support.microsoft.com/en-us/help/142126/macro-to-loop-through-all-worksheets-in-a-workbook>
+
+```bash
+Sub WellsFargo():
+    Dim active_sheet_name As String
+    Dim active_sheet_name_array() As String
+    Dim state As String
+    Dim last_row As Integer
+    Dim header_array() As String
+    Dim currency_value As Double
+    Dim last_column As Integer
+    
+    For Each Worksheet In Worksheets
+
+        sheetname = Worksheet.Name
+        MsgBox (sheetname)
+        active_sheet_name_array = Split(sheetname, "_")
+        state = active_sheet_name_array(0)
+        last_row = Worksheet.Cells(Rows.Count, 1).End(xlUp).Row
+        
+        Worksheet.Columns("A:A").Insert Shift:=xlToRight
+        
+        last_column = Worksheet.Cells(1, Columns.Count).End(xlToLeft).Column
+        
+        For i = 1 To last_row
+        
+            If i = 1 Then
+                Worksheet.Cells(i, 1).Value = "State"
+            Else
+                Worksheet.Cells(i, 1).Value = state
+            End If
+            
+        Next i
+        
+        For j = 3 To last_column
+        
+        header_array = Split(Worksheet.Cells(1, j).Value, " ")
+        Worksheet.Cells(1, j).Value = header_array(3)
+            
+        Next j
+        
+        For i = 2 To last_row
+        
+            For j = 3 To last_column
+            
+                Worksheet.Cells(i, j).NumberFormat = "$#,##0.00"
+                
+            
+            Next j
+            
+        Next i
+        
+    Next Worksheet
+    
+End Sub
+```
+
 ```bash
 Sub WellsFargo()
     Dim worksheet_name As String
