@@ -2,6 +2,8 @@
 
 ## 01-Stu_StarsCounter
 
+* <https://dedicatedexcel.com/how-to-find-the-last-row-with-excel-vba/>
+
 ```bash
 Sub StarCounter()
 
@@ -25,6 +27,33 @@ Sub StarCounter()
               
 End Sub
 ```
+
+```bash
+Sub CalculateTotal():
+    Dim number_stars As Integer
+    Dim last_row As Integer
+    
+    last_row = Cells(Rows.Count, 1).End(xlUp).Row
+    
+    For i = 2 To last_row
+        
+        number_stars = 0
+        
+        For j = 4 To 8
+        
+            If Cells(i, j).Value = "Full-Star" Then
+                number_stars = number_stars + 1
+            End If
+        Next j
+        
+        Cells(i, 9).Value = number_stars
+        
+    Next i
+                     
+End Sub
+```
+
+## 02-Ins_Formatter
 
 ```bash
   Sub formatter()
@@ -56,6 +85,8 @@ End Sub
   ' See this website for color guides: ttp://dmcritchie.mvps.org/excel/colors.htmh
 End Sub
 ```
+
+## 03-Stu_Gradebook
 
 ```bash
 Sub Calculate_Grade()
@@ -108,6 +139,8 @@ Sub Reset()
 End Sub
 ```
 
+## 04-Stu_Checkerboard
+
 ```bash
 ' even rows --> odd columns will be black, even columsn will be red
 ' odd rows --> odd columns will be red, even columns will be black
@@ -154,6 +187,8 @@ Sub BuildCheckerboard()
 End Sub
 ```
 
+## 05-Ins_NextCells
+
 ```bash
 Sub NextCells()
 
@@ -173,6 +208,40 @@ Sub NextCells()
     End If
 
   Next i
+
+End Sub
+```
+
+## 06-Stu_CreditCardChecker
+
+```bash
+Sub CreditCardChecker():
+    Dim last_row As Integer
+    Dim current_column As Integer
+    Dim brand As String
+    Dim number_brands As Integer
+    Dim total_charged As Integer
+    
+    last_row = Cells(Rows.Count, 1).End(xlUp).Row
+    current_column = 1
+    brand = ""
+    number_brands = 0
+    total_charged = 0
+
+    For i = 2 To last_row
+    
+        brand = Cells(i, current_column).Value
+        total_charged = total_charged + Cells(i, 3).Value
+    
+        If Cells(i + 1, current_column).Value <> brand Then
+            number_brands = number_brands + 1
+            Cells(number_brands + 1, 7) = brand
+            Cells(number_brands + 1, 8) = total_charged
+            total_charged = 0
+        End If
+        
+    Next i
+        
 
 End Sub
 ```
