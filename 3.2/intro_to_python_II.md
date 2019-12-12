@@ -1,5 +1,7 @@
 # 3.2 Introduction to Python II
 
+* Python flashcards site: <https://pygrail.com/>
+
 ## 01-Stu_QuickCheckup
 
 ```bash
