@@ -2,6 +2,29 @@
 
 ## Resources
 
+## Matplotlib
+
+* <https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/marker_reference.html>
+* <https://stackoverflow.com/questions/43027980/purpose-of-matplotlib-inline>
+* <https://matplotlib.org/3.1.1/faq/troubleshooting_faq.html>
+* <https://matplotlib.org/examples/index.html>
+* <https://www.youtube.com/watch?v=f_J8QU1m0Ng>
+* Color schemes are important.  There are some handy suggestions, including accessible color schemes, from <https://colorbrewer2.org>
+* Built-in color schemes based on those from ColorBrewer are available in matplotlib (<https://matplotlib.org/3.1.1/tutorials/colors/colormaps.html>)
+* To use a color scheme, you need to specify in the plot command c=<list of data to color>, cmap='<color scheme>'
+
+```bash
+import random
+import matplotlib.pyplot as plt
+import numpy as np
+x_limit = 100
+x_axis = np.arange(0, x_limit, 1)
+data = [random.random() for value in x_axis]
+color_data = [random.random() for value in x_axis]
+plt.scatter(x_axis, data, marker="o", c=color_data, s=x_axis, alpha=0.75, cmap='Dark2')
+plt.colorbar()
+```
+
 ### Data Visualization
 
 * <https://socviz.co/>
@@ -12,6 +35,11 @@
   * <https://twitter.com/TedPetrou/status/1196113338217877505>
 * Jupyter Notebook
   * <https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/>
+* Convert notebook to .py file: <https://github.com/jupyter/nbconvert>
+
+```bash
+jupyter nbconvert --to python PyBank.ipynb
+```
 
 ### Python
 
