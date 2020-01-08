@@ -2,6 +2,11 @@
 
 ## Resources
 
+* <https://towardsdatascience.com/autoviz-a-new-tool-for-automated-visualization-ec9c1744a6ad>
+* <https://podcasts.apple.com/us/podcast/codenewbie/id919219256?i=1000372644598>
+* <https://www.greatlearning.in/blog/weekly-guide-data-science-and-analytics-december/>
+* <https://www.vox.com/recode/2019/12/18/21026229/nyc-ai-algorithms-shadow-report>
+
 ## Matplotlib
 
 * <https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/marker_reference.html>
@@ -12,6 +17,8 @@
 * Color schemes are important.  There are some handy suggestions, including accessible color schemes, from <https://colorbrewer2.org>
 * Built-in color schemes based on those from ColorBrewer are available in matplotlib (<https://matplotlib.org/3.1.1/tutorials/colors/colormaps.html>)
 * To use a color scheme, you need to specify in the plot command c=<list of data to color>, cmap='<color scheme>'
+* Plotting labels on bars themselves (or elsewhere within a graph, rather than on the axis)
+  * <https://www.science-emergence.com/Articles/How-to-add-text-on-a-bar-with-matplotlib-/>
 
 ```bash
 import random
@@ -52,12 +59,20 @@ jupyter nbconvert --to python PyBank.ipynb
     * <https://www.youtube.com/watch?v=TjWOZDY00WA&feature=youtu.be>
     * <https://www.youtube.com/watch?v=Y3TRABzAfho&feature=youtu.be>
     * <https://www.youtube.com/watch?v=Logbtv4oQlc&feature=youtu.be>
+* <https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/>
+* Python and Machine Learning: <https://www.humblebundle.com/books/python-machine-learning-packt-books>
 
 ### Pandas
 
 * Using loc and iloc in panda dataframes
   * <https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/>
   * <http://scrapingauthority.com/pandas-dataframe-filtering/>
+* How to create a correlation matrix using pandas: <https://datatofish.com/correlation-matrix-pandas/>
+
+  ```bash
+  plt.matshow(dataframe.corr())
+  plt.show()
+  ```
 
 
 ### Git and GitHub
