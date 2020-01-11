@@ -64,6 +64,7 @@ jupyter nbconvert --to python PyBank.ipynb
 
 ### Pandas
 
+* <https://stackoverflow.com/questions/29432629/plot-correlation-matrix-using-pandas>
 * Using loc and iloc in panda dataframes
   * <https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/>
   * <http://scrapingauthority.com/pandas-dataframe-filtering/>
